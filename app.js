@@ -4,7 +4,6 @@ const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 
-// Swagger documentation setup
 const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
@@ -18,18 +17,15 @@ const swaggerOptions = {
       servers: ['http://34.172.161.189:3000']
     }
   },
-  apis: ['./routes/*.js'], // Path to your JSDoc comments
+  apis: ['./routes/*.js'],
 };
 
-// Swagger docs in JSON format
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-// Example API route
-app.get('/api/v1/resource', (req, res) => {
-  res.json({ message: 'API Resource' });
+app.get('/api/v1/hello_world', (req, res) => {
+  res.json({ message: 'Hello world from Vteles 2025' });
 });
 
-// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

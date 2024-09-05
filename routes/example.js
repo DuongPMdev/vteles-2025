@@ -19,8 +19,8 @@
 const express = require('express');
 const router = express.Router();
 
-app.get('/api/v1/hello_world', (req, res) => {
-  res.json({ message: 'Hello world from Vteles 2025' });
+router.get('/api/v1/resource', (req, res) => {
+  res.json({ message: 'API Resource' });
 });
 
 module.exports = router;

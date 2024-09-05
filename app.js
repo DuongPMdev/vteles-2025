@@ -23,8 +23,8 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
-app.get('/api/v1/hello_world', (req, res) => {
-  res.json({ message: 'Hello world from Vteles 2025' });
+app.get('/api/v1/resource', (req, res) => {
+  res.json({ message: 'API Resource' });
 });
 
 const PORT = process.env.PORT || 3000;
